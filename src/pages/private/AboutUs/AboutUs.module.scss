@@ -3,38 +3,35 @@
 @import "~bootstrap/scss/mixins";
 
 .AboutUs {
-  padding: 40px 0 73px;
+ 
 
-  @include media-breakpoint-up(xl) {
-    padding: 44px 0 125px;
-  }
-
-  .userInfo {
-    @include media-breakpoint-up(xl) {
-      margin-bottom: 50px;
-    }
-  }
-
-  .mainTitle {
+  .mainTitle {font-family: 'Nunito';
     margin: 0 0 12px;
     font-weight: bold;
     font-size: 1.25rem;
     text-align: center;
+    color: #00bbf9;
   }
 
   .mainDescription {
+    font-family: 'Nunito';
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 42px !important;
     line-height: 1.5;
     text-align: center;
 
+    text-shadow: 1px 0 1px #c7c7c7, 0 1px 1px #c7c7c7, -1px 0 1px #c7c7c7, 0 -1px 1px #c7c7c7, 0 1px 0 #c7c7c7;
+    color: #fff;
+
     span {
+      font-size: 42px !important;
+      font-family: 'Nunito';
       font-weight: bold;
       font-size: 0.875rem;
+      color: #fff;
 
       @include media-breakpoint-up(xl) {
         font-size: 2rem;
-        color: #0b2e13;
       }
     }
 
@@ -43,6 +40,12 @@
       font-weight: bold;
       font-size: 2rem;
     }
+  }
+
+  .gridRows {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 25px;
   }
 
   .text {
@@ -61,13 +64,17 @@
     }
 
     @include media-breakpoint-up(xl) {
-      margin: 0;
-      padding: 15px 20px 35px 35px;
-      font-size: 1.5rem;
-      line-height: 1.166;
-      background-color: #0edc30;
+      font-family: "Nunito";
+      margin: 0 auto !important;
+        text-align: center !important;
+      color: #38d1f7;
+      max-width: 950px;
+      font-size: 24px;
+      padding: 0 20px;
+      line-height: 150%;
+      background-color: #fff;
       text-align: left;
-      border-radius: 30px;
+      border-radius: 10px;
     }
   }
 
@@ -83,6 +90,12 @@
       transform: rotate(-21.6deg);
       margin-top: 63px;
     }
+  }
+
+  .centrRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .buildUpWrapper {
@@ -136,10 +149,10 @@
     }
 
     @include media-breakpoint-up(xl) {
-      margin-top: 45px;
+     
 
       .text {
-        padding: 22px 27px;
+        padding: 22px 20px;
 
         span {
           color: #0b2e13;

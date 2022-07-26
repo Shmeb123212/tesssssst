@@ -8,7 +8,8 @@ import ReplenishmentOfMoney from "./ReplenishmentOfMoney";
 import WithdrawalOfMoney from "./WithdrawalOfMoney";
 import MoneyTransferModal from "./MoneyTransferModal";
 import OperationsHistoryModal from "./OperationsHistoryModal";
-
+import MyViewElement from 'src/components/MyViewElements/MyViewElements';
+import MyModal from 'src/components/modal/MyModal';
 function Finances() {
   const dispatch = useDispatch();
   const [
@@ -30,7 +31,9 @@ function Finances() {
     document.body.style.overflow = 'initial';
     setIsOperationsHistoryModalVisible(false);
   };
+  
 
+  const [modal, setModal] = useState(false)
   return (
     <>
       <Container className="root-page">
@@ -47,10 +50,15 @@ function Finances() {
                     <div className="card list-card-fin">
                       <div className="card__header">
                         <div className="card__header-left">
+                          <MyViewElement element={
                           <h3 className="card__title card__title-fin">Общий баланс</h3>
+
+                          }/>
                         </div>
                       </div>
                       <div className="card__body">
+                      <MyViewElement element={
+
                         <h3 className='card-fin-bal'>
                           {formatter
                             .format(
@@ -58,13 +66,19 @@ function Finances() {
                             )
                             .replace('₽', 'ST')}
                         </h3>
+                          }/>
+
                         <br />
+                      <MyViewElement element={
+
                         <button
                           onClick={handleVisibleTransferMoneyModal}
                           className='fin-btn'
                         >
                           Перевод партнеру
                         </button>
+                          }/>
+
                       </div>
                     </div>
                   </Col>
@@ -72,11 +86,17 @@ function Finances() {
                     <div className="card list-card-fin">
                       <div className="card__header">
                         <div className="card__header-left">
-                          <h3 className="card__title card__title-fin">Транзитный баланс</h3>
+                        <MyViewElement element={
+                            <h3 className="card__title card__title-fin">Транзитный баланс</h3>
+                        }/>
+
                         </div>
                       </div>
                       <div className="card__body">
+                      <MyViewElement element={
                         <h3 className='card-fin-bal'>
+                      
+
                           {formatter
                             .format(
                               (userInfo.transferBalance > -1 &&
@@ -84,20 +104,30 @@ function Finances() {
                               0,
                             )
                             .replace('₽', 'ST')}
+                        
                         </h3>
+                        }/>
 
                         <br />
+                      <MyViewElement element={
+
                         <button
                           onClick={openOperationsHistoryModal}
                           className='fin-btn'
                         >
                           История операций
                         </button>
+                        }/>
+
                       </div>
                     </div>
                   </Col>
                 </Row>
+                <MyViewElement element={
+
                 <h2 className='pay-fin-title'>Приобрести/вывести</h2>
+              }/>
+
                 <ReplenishmentOfMoney />
                 {/* <h2>Вывод</h2>
                 <WithdrawalOfMoney /> */}
@@ -106,6 +136,7 @@ function Finances() {
           </Col>
         </Row>
       </Container>
+      <MyModal title={'Укажите сумму'} visible={modal} setVisible={setModal} setThx={()=>{}}/>
       <MoneyTransferModal />
       {isOperationsHistoryModalVisible && (
         <OperationsHistoryModal onClose={closeOperationsHistoryModal} />

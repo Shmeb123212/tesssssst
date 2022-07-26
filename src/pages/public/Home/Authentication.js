@@ -24,6 +24,7 @@ function Authentication() {
       <div className="authentication__container">
         <div className="authentication__flex">
           <div className="authentication__btn-wrap">
+  
             <Link
               to={routes.signUp}
               className="authentication__link button button--violet authentication__btn"

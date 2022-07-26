@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect, useCallback,useMemo } from 'react'
 import { useParams, Link, NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { Container, Row, Col } from 'reactstrap'
@@ -14,6 +14,7 @@ import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
 import closeIcon from '../../../scss/media/close.ac2aaa1a.svg'
 import StarRating from '../../../components/StarRating'
 import { Spinner } from 'react-bootstrap'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 // eslint-disable-next-line react/prop-types
 const TableQueuem = ({ location: { state = {} } }) => {
@@ -79,28 +80,42 @@ const TableQueuem = ({ location: { state = {} } }) => {
     },
     [dispatch, type, matrixInfo],
   )
+ 
 
   return (
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-          {matrixInfo && <h1 className={styles.title}>STARS - {matrixInfo.name}</h1>}
+          
+          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>STARS - {matrixInfo.name}</h1>}/>}
           <Link to={routes.matrixs} className={styles.close}>
-            <img src={closeIcon} alt="Close" />
-          </Link>
+        <span className={styles.closeIT}>
+
+        </span>
+        <span className={styles.closeIB}>
+
+        </span>
+      </Link>
         </div>
         <div className={styles.subHeader}>
           {matrixInfo && matrixInfo.isActive && (
             <nav className={styles.nav}>
+              <MyViewElement element={
               <NavLink to={navRoute()} exact activeClassName={styles.active}>
                 Структура
               </NavLink>
+              }/>
+              <MyViewElement element={
               <NavLink to={navRoute('/queue')} exact activeClassName={styles.active}>
                 Очередь
               </NavLink>
+              }/>
+
             </nav>
           )}
           <div className={styles.actions}>
+          <MyViewElement element={
+
             <div>
               <button
                 className={line === 0 ? styles.active : undefined}
@@ -121,7 +136,10 @@ const TableQueuem = ({ location: { state = {} } }) => {
                 Вторая линия
               </button>
             </div>
+              }/>
+
             {!!line && (
+          <MyViewElement element={
               <div className={styles.search}>
                 <input
                   type="text"
@@ -131,6 +149,8 @@ const TableQueuem = ({ location: { state = {} } }) => {
                   placeholder="Поиск по логину"
                 />
               </div>
+              }/>
+
             )}
           </div>
         </div>
@@ -169,7 +189,10 @@ const TableQueuem = ({ location: { state = {} } }) => {
                         <div className="card__body">
                           <div className="list-info list-info--horizontal">
                             <div className="list-info__group">
+                            <MyViewElement element={
                               <div className="list-info__label">Закрытых мест в столе</div>
+                            }/>
+
                               <div className="list-info__value">
                                 <StarRating
                                   max={10}
@@ -179,6 +202,8 @@ const TableQueuem = ({ location: { state = {} } }) => {
                                 />
                               </div>
                             </div>
+                           
+
                           </div>
                         </div>
                       </div>

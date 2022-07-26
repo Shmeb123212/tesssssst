@@ -16,6 +16,9 @@ import starsupReducer from '../reducers/starsup.reducer'
 import starsupTableReducer from '../reducers/starsupTable.reducer'
 import starsReducer from '../reducers/stars.reducer'
 import unoReducer from '../reducers/uno.reducer'
+import buyReducer from 'src/reducers/exchangeBuy.reducer'
+import sellReducer from 'src/reducers/exchangeSell.reducer'
+
 
 const rootReducer = (history) =>
   combineReducers({
@@ -32,6 +35,8 @@ const rootReducer = (history) =>
     starsupTable: starsupTableReducer,
     stars: starsReducer,
     uno: unoReducer,
+    buyExchange: buyReducer,
+    sellExchange: sellReducer,
     router: connectRouter(history),
   })
 

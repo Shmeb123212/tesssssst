@@ -5,6 +5,8 @@ import Authentication from './Authentication'
 import Footer from './Footer'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Hero from './Hero'
+import About from './About'
 
 function Home() {
   useEffect(() => {
@@ -15,10 +17,12 @@ function Home() {
   return (
     <div className="page">
       <Header />
+      <Hero />
+      <About />
       <div className="auth__wrapper">
         <div className="auth__page">
-          <Banner />
-          <Authentication />
+          {/* <Banner /> */}
+          {/* <Authentication /> */}
           <Footer />
         </div>
       </div>

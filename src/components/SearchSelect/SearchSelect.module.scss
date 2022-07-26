@@ -9,14 +9,14 @@
     display: flex;
     align-items: center;
     border-radius: 35px;
-    background-color: $indigo;
+    background-color: #cbf3f0;
     border: 1px solid #fff;
 
     input {
         width: 100%;
         padding-left: 20px;
         background-color: transparent;
-        color: $white;
+        color: #2ec4b6;
         border: none;
         font-size: 1.25rem;
 
@@ -26,6 +26,8 @@
 
         &::placeholder {
             opacity: 1;
+        color: #2ec4b6;
+
         }
     }
 
