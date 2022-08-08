@@ -11,8 +11,17 @@ import Planet from './../../../scss/media/planet-1.gif'
 function Header() {
   const [open, setOpen] = useState(false)
   const { t, i18n } = useTranslation('common')
+  const [burger, setBurger] = useState(false)
 
+
+  const toggleNav = (e)=>{
+    e.preventDefault()
+    setBurger(!burger)
+  }
   console.log(`i18n`, i18n)
+
+
+
 
   const handleHamburgerClick = () => {
     if (window.matchMedia('(max-width: 1300px)').matches) {
@@ -32,32 +41,36 @@ function Header() {
             </span>
             <span>S</span>
           </div>
+          
+            
+          
           <div className={cl.navBlock}>
-            <nav className={cl.nav}>
-              <ul className={cl.listNav}>
-                <li className={cl.itemNav}>
-                  <a className={cl.linkNav} href="#about" onClick={handleHamburgerClick}>
-                    {t('О проекте')}
-                  </a>
-                </li>
-                <li className={cl.itemNav}>
-                  <a className={cl.linkNav} href="#advantages" onClick={handleHamburgerClick}>
-                    {t('Преимущества')}
-                  </a>
-                </li>
-                <li className={cl.itemNav}>
-                  <a href="#roadmap" className={cl.linkNav} onClick={handleHamburgerClick}>
-                    Дорожная карта
-                  </a>
-                </li>
-                <li className={cl.itemNav}>
-                  <a className={cl.linkNav} href="#materials" onClick={handleHamburgerClick}>
-                    {t('Материалы')}
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <nav className={cl.nav}>
+            <ul className={cl.listNav}>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#about" onClick={handleHamburgerClick}>
+                  {t('О проекте')}
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#advantages" onClick={handleHamburgerClick}>
+                  {t('Преимущества')}
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a href="#roadmap" className={cl.linkNav} onClick={handleHamburgerClick}>
+                  Дорожная карта
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#materials" onClick={handleHamburgerClick}>
+                  {t('Материалы')}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+         
           <div className={cl.langBlock}>
             <Link to={routes.signIn} className={cl.signIn}>
               <button className={cl.btnGradient}>
@@ -70,7 +83,16 @@ function Header() {
               </button>
             </Link>
           </div>
+          <div className={cl.burgerBlock}>
+              <button className={burger ? [cl.hamburgerButton, cl.burgerActive].join` ` : cl.hamburgerButton} onClick={e=>toggleNav(e)}>
+              <span className={cl.lineBurgerTop}></span>
+              <span className={cl.lineBurger}></span>
+              <span className={cl.lineBurgerBottom}></span>
+              </button>
+            </div>
         </div>
+
+       
             {/* <CNavLink className="header__box">
               <CNavItem className="nav">
                 <a className="nav__item" href="#about" onClick={handleHamburgerClick}>

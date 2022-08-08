@@ -31,7 +31,10 @@ function Finances() {
     document.body.style.overflow = 'initial';
     setIsOperationsHistoryModalVisible(false);
   };
-  
+
+  const financeData = useSelector(state=>state.financeMoney)
+  const filedData = financeData.filter(e=>e.value)
+  console.log(filedData)
 
   const [modal, setModal] = useState(false)
   return (
@@ -60,11 +63,12 @@ function Finances() {
                       <MyViewElement element={
 
                         <h3 className='card-fin-bal'>
-                          {formatter
+                          {/* {formatter
                             .format(
                               (userInfo.balance > -1 && userInfo.balance) || 0,
                             )
-                            .replace('₽', 'ST')}
+                            .replace('₽', 'ST')} */}
+                            {filedData.reduce((ac,e)=>+e.ruble+ac,0)}
                         </h3>
                           }/>
 

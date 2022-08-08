@@ -194,3 +194,11 @@
 .trxItem {
     background-color: rgb(228, 29, 59);
 }
+
+
+@media (max-width:768px) {
+    .transBlock {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 25px;
+    }
+}

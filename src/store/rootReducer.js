@@ -18,6 +18,7 @@ import starsReducer from '../reducers/stars.reducer'
 import unoReducer from '../reducers/uno.reducer'
 import buyReducer from 'src/reducers/exchangeBuy.reducer'
 import sellReducer from 'src/reducers/exchangeSell.reducer'
+import { financeMoneyReducer } from 'src/reducers/financeM.reducer'
 
 
 const rootReducer = (history) =>
@@ -38,6 +39,7 @@ const rootReducer = (history) =>
     buyExchange: buyReducer,
     sellExchange: sellReducer,
     router: connectRouter(history),
+    financeMoney: financeMoneyReducer
   })
 
 export default rootReducer

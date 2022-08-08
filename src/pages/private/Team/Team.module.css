@@ -156,3 +156,72 @@
     padding: 0;
 }
 
+@media (max-width: 992px) {
+    .listPersons {
+        column-gap: 25px;
+        row-gap: 30px;
+    }
+    .personBlock {
+        grid-template-columns: repeat(1,auto);
+        grid-template-rows: repeat(2, auto);
+        justify-content: center;
+        gap: 30px;
+    }
+    .itemPerson {
+        max-height: 350px;
+        padding: 30px 35px;
+    }
+    .itemPerson:hover {
+        max-height: 650px;
+    }
+    .personCircle {
+        width: 150px;
+    }
+}
+
+@media (max-width:768px) {
+    .listPersons {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, auto);
+    }
+    .personBlock {
+        grid-template-columns: repeat(2,auto);
+        grid-template-rows: repeat(1, auto);
+        justify-content: start;
+        gap: 40px;
+    }
+    .itemPerson {
+        max-height: 220px;
+        padding: 35px 40px;
+    }
+    .itemPerson:hover {
+        max-height: 550px;
+    }
+    .personCircle {
+        width: 150px;
+    }
+}
+
+
+@media (max-width:576px) {
+    .personBlock {
+        grid-template-columns: repeat(1,auto);
+        grid-template-rows: repeat(2, auto);
+        justify-content: start;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .listPersons {
+        justify-content: center;
+        justify-items: center;
+    }
+    .itemPerson {
+        max-height: 340px;
+        max-width: 400px;
+        padding: 35px 25px;
+    }
+    .itemPerson:hover {
+        max-height: 650px;
+    }
+}

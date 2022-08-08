@@ -120,3 +120,19 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
+
+@media (max-width:768px)  {
+  .buySellCard {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .marketBtns {
+    gap: 15px;
+  }
+  .marketBtns a {
+    padding: 15px 25px !important;
+    font-size: 16px;
+  }
+}

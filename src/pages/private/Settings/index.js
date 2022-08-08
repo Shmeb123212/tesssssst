@@ -37,7 +37,7 @@ function Settings() {
             </Col>
           </Row>
           <ChangeDescription />
-          <Accordion infoData={infoDataAcc}/>
+          {/* <Accordion infoData={infoDataAcc}/> */}
         </Col>
       </Row>
     </Container>

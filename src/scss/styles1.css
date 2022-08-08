@@ -123,6 +123,8 @@ width: 80%;
   background-repeat: repeat;
 }
 
+
+
 .ava-leader {
     background:
     /*shape*/
@@ -1357,4 +1359,187 @@ input {box-sizing: border-box !important;}
   background: #cae9ff !important;
   border: 1px solid #fff !important;
   color: #5fa8d3 !important;
+}
+
+
+
+
+@media (max-width: 768px){
+
+  .root-page-header__left {
+    display: none;
+  }
+  .list-info-s  {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    padding: 0 !important;
+   
+  }
+
+  .solary-block {
+    height: 400px;
+  }
+  .item-info-s {
+
+    font-size: 16px;
+  }
+  .card__bot {
+    margin-top: 40px;
+    padding: 20px 85px 35px;
+  }
+  .leader {
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  .card {
+    margin: 0;
+    padding: 0;
+  }
+  .card__title {
+    margin-top: 25px;
+  }
+
+  .root-page-title-m, .root-page-title {
+    font-size:32px;
+  }
+  .news__card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .Table_close__lKEgQ, .Table_close__19I95, .Table_close__2vzvS, .Table_close__JNUiV, .SuperStars_close__2gDxQ {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .Table_closeIB__2MrL0, .Table_closeIT__3Xmi6, .Table_closeIT__2X83L, .Table_closeIB__3C_4S,.SuperStars_closeIT__BHfwt,.SuperStars_closeIB__1yqUD, .Table_closeIT__2LcvH, .Table_closeIB__3SXdW, .Table_closeIT__10udE, .Table_closeIB__3hfTV {
+    height: 3px !important;
+  }
+
+  .Table_header__3hOLq, .Table_header__3OhgZ, .Table_header__2bsYV, .Table_header__3F62a, .SuperStars_header__1wZ7N {
+    margin: 25px 15px !important;
+  }
+
+  .Table_title__3MsBD, .Table_title__396A9, .Table_title__2xr-s, .Table_title__1SxNE, .SuperStars_title__Dd3OK {
+    font-size: 20px !important;
+  }
+
+  .Table_nav__yylbW a {
+    padding: 7px 10px !important;
+    line-height: 1 !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+  }
+
+  .Table_content__1jgvy button {
+    min-height: 40px;
+  }
+
+  .w-1001 {
+    height: 40px;
+    font-weight: 500;
+    font-family: 'Nunito';
+    font-family: var(--nunito);
+    font-size: 14px;
+    color: #2ec4b6;
+    text-transform: uppercase;
+    max-width: 200px;
+    margin: 4px auto;
+  }
+
+  .Table_footer__3T_JB button, .Table_footer__3Pdar button, .Table_footer__2-T16 button {
+    margin-bottom: 25px !important;
+  }
+  .Table_price__-3uM2, .Table_price__2AQQA, .Table_price__1cIdi {
+    font-size: 16px !important;
+    margin: 8px 0 !important;
+  }
+}
+
+@media (max-width:576px) {
+  .list-info-s  {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin: 0 !important;
+  }
+  .item-info-s {
+
+    font-size: 14px;
+  }
+
+  .solary-block {
+    height: 260px;
+  }
+  .leader {
+    padding:  30px 15px;
+    max-width: 340px;
+  }
+  .card {
+    max-width: 350px;
+    width: 100%;
+    padding: 30px 50px;
+    margin-top: 30px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+  .list-info__label {
+    font-size: 14px;
+  }
+  .leader__figure {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  .Avatar_inputWrapper__3tFDo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .leader__image img, .leader__image-mentor img  {
+    display: inline-block;
+   width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto !important;padding: 0 !important;
+  }
+  .card__bot {
+    margin-top: 40px;
+    padding: 20px 50px 35px;
+  }
+  .root-page-title-m, .root-page-title {
+    font-size:28px;
+    padding: 20px 30px;
+  }
+
+  .card__title-info span {
+    padding-left: 40px;
+    font-size: 18px;
+  }
+  .startrek__title {
+    padding: 0;
+
+  }
+  .form-control {
+    margin: 0 !important;
+  }
+  .countdown-timer {
+    font-size: 16px !important;
+  }
+
+  .news__card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .news__figure-image img {
+    max-height: 350px;
+  }
+
 }
