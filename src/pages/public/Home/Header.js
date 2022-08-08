@@ -91,7 +91,30 @@ function Header() {
               </button>
             </div>
         </div>
-
+          <div className={burger ? [cl.activeDrop ,cl.dropBlock].join` ` : cl.dropBlock}>
+            <ul className={cl.dropList}>
+            <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#about" onClick={handleHamburgerClick}>
+                  {t('О проекте')}
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#advantages" onClick={handleHamburgerClick}>
+                  {t('Преимущества')}
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a href="#roadmap" className={cl.linkNav} onClick={handleHamburgerClick}>
+                  Дорожная карта
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#materials" onClick={handleHamburgerClick}>
+                  {t('Материалы')}
+                </a>
+              </li>
+            </ul>
+          </div>
        
             {/* <CNavLink className="header__box">
               <CNavItem className="nav">
