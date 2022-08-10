@@ -4,9 +4,9 @@ import MyBtnFiled from "../buttonback/MyBtnFiled";
 import MyInput from "../Input/MyInput";
 
 
-const MyModal = ({block, title, visible, setVisible, setThx})=>{
+const MyModal = ({block, title, visible, setVisible, changeCurrencyAndCount, currencyAndCount})=>{
     
-    const [modalInfo, setModalInfo] = useState({namePerson: '', tel: ''})
+    const [modalInfo, setModalInfo] = useState({count: '', currency: ''})
 
     const blockModal = useRef('')
     let forServerInfo = {}
@@ -20,7 +20,7 @@ const MyModal = ({block, title, visible, setVisible, setThx})=>{
             ...modalInfo, id: Date.now()
         }
         forServerInfo = {...newModal}
-        setModalInfo({namePerson:'',tel:''})
+        setModalInfo({count:'',tel:''})
         // postRequest(forServerInfo)
         // console.log(forServerInfo)
         // ContactsService.setPhoneNName(modalInfo.tel, modalInfo.tel)
@@ -44,7 +44,7 @@ const MyModal = ({block, title, visible, setVisible, setThx})=>{
   
 
 
-        
+       
   
     visible && rootClasses.push(cl.active) && rootContentClasses.push(cl.activeContent)
     return (
@@ -55,15 +55,15 @@ const MyModal = ({block, title, visible, setVisible, setThx})=>{
                         <h3 className={cl.modalTitle}>{title}</h3>
                         <p className={cl.modalDescr}>Менеджер свяжется с вами в течение дня, чтобы обсудить вашу задачу</p>
                         <MyInput valueInput={modalInfo.namePerson} type="number"  required clean={clean} classesInput={cl.modalInput} classesPlace={cl.modalPlace} place='Введите сумму' setInput={setModalInfo} input={modalInfo}/>
-                        <select className={cl.select}>
-                            <option>Доллары</option>
-                            <option>Рубли</option>
-                            <option>Евро</option>
+                        <select className={cl.select} onChange={e=>setModalInfo({...modalInfo, currency:e.target.value})}>
+                            <option>USD</option>
+                            <option>RUB</option>
+                            <option>EUR</option>
                         </select>
                         <p className={cl.modalWarning}>Нажимая на кнопку, вы даете согласие на обработку ваших персональных данных</p>
                         <span className={cl.modalExit} onClick={e=>{e.preventDefault();setVisible(false)}}></span>
                         <div className={cl.btnBlock}>
-                            <a target='_blank' href={'#'} onClick={e=>{addModalInfo(e); clean = true; setThx(true)}}>
+                            <a target='_blank' href={'#'} onClick={e=>{addModalInfo(e); clean = true; changeCurrencyAndCount({...currencyAndCount,count: modalInfo.count, currency: modalInfo.currency})}}>
                                 <MyBtnFiled  type='submit' form='modal' classes={cl.modalBtn} >ОТПРАВИТЬ</MyBtnFiled>
                             </a>
                             
