@@ -36,7 +36,7 @@ const validationSchema = yup.object({
 
 function ReplenishmentOfMoney() {
   const [isCurrencyAndCount, setIsCurrencyAndCount] = useState({count: '', currency: ''})
-  const [isInfoCard, setIsInfoCard] = useState({currency: '', pay: ''})
+  const [isInfoCard, setIsInfoCard] = useState({currency: '', pay: '', option: ''})
   const submitCreatePayForm = ({ amount }) => {
     api
       .createPay({ amount: Number(amount) })
@@ -49,9 +49,9 @@ function ReplenishmentOfMoney() {
   }
   
   const financeData = useSelector(state=>state.financeMoney)
-  const submitCreatePayeerPayForm = ( amount,currency ) => {
+  const submitCreatePayeerPayForm = ( amount,currency,option,pay ) => {
     api
-      .createPayeerPay({ amount: Number(amount), curr: currency })
+      .createPayeerPay({ amount: Number(amount), curr: currency, option: option, pay: pay })
       .then((response) => {
         if (response.url) {
           window.location.replace(response.url)
@@ -59,9 +59,11 @@ function ReplenishmentOfMoney() {
       })
       .catch(() => {})
   }
-
+  console.log(isInfoCard)
   useMemo(()=>{
-    if(isCurrencyAndCount.count) submitCreatePayeerPayForm(isCurrencyAndCount.count, isCurrencyAndCount.currency)
+    if(isCurrencyAndCount.count) {
+      submitCreatePayeerPayForm(isCurrencyAndCount.count, isCurrencyAndCount.currency, isInfoCard.currency)
+    }
   },[isCurrencyAndCount])
 
   const infoData = [{nameCash: 'usd', sign: dollarImg,count: financeData.find(e=>e.currency === 'usd').value , classes: cl.dollarItem, roubleCount: financeData.find(e=>e.currency === 'usd').ruble, urlOut: '', urlIn: ''},
