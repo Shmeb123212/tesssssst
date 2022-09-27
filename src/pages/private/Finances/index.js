@@ -63,12 +63,11 @@ function Finances() {
                       <MyViewElement element={
 
                         <h3 className='card-fin-bal'>
-                          {/* {formatter
+                          {/* {`${formatter
                             .format(
-                              (userInfo.balance > -1 && userInfo.balance) || 0,
-                            )
-                            .replace('₽', 'ST')} */}
-                            {filedData.reduce((ac,e)=>+e.ruble+ac,0)}
+                              (userInfo.filter((e)=>e.price != 0).reduce((ac,el)=>ac+el,0) > -1 && userInfo.filter((e)=>e.price != 0).reduce((ac,el)=>ac+el,0)) || 0,
+                            )} `} */}
+                            0.00 ST
                         </h3>
                           }/>
 
