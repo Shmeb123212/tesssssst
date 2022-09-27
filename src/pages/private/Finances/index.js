@@ -67,7 +67,10 @@ function Finances() {
                             .format(
                               (userInfo.filter((e)=>e.price != 0).reduce((ac,el)=>ac+el,0) > -1 && userInfo.filter((e)=>e.price != 0).reduce((ac,el)=>ac+el,0)) || 0,
                             )} `} */}
-                            0.00 ST
+                              {`${formatter
+                            .format(
+                              (userInfo.balance> -1 && userInfo.balance) || 0,
+                            ).replace('₽', 'ST')}`}
                         </h3>
                           }/>
 
